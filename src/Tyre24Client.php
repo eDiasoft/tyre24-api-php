@@ -34,65 +34,12 @@ class Tyre24Client
 
     private function setServices()
     {
-        $this->messages = new Messages();
-        $this->articles = new Articles();
-        $this->documents = new Documents();
-        $this->orders = new Orders();
-        $this->shippings = new Shippings();
+        $this->messages = new Messages($this->authenticate);
+        $this->articles = new Articles($this->authenticate);
+        $this->documents = new Documents($this->authenticate);
+        $this->orders = new Orders($this->authenticate);
+        $this->shippings = new Shippings($this->authenticate);
     }
-
-//    public function getOrders()
-//    {
-//        $this->handler_stack->push($this->handleAuthorizationHeader());
-//
-//        try {
-//            $content = $this->guzzle->get('latestorders', [
-//                'query' => [
-//                    'country' => 'de'
-//                ]
-//            ])->getBody()->getContents();
-//
-//            return new Orders(json_decode($content, true)['data']);
-//        }catch (ClientException $e) {
-//            dd($e->getResponse()->getHeaders());
-//        }
-//    }
-//
-//    private function retriveNewAuthenticateToken()
-//    {
-//        $result = $this->guzzle->get('login', [
-//            'auth'  => [
-//                env('TYRE24_' . strtoupper($this->shop->name) . '_USER'),
-//                env('TYRE24_' . strtoupper($this->shop->name) . '_PASSWORD')
-//            ]
-//        ]);
-//
-//        $data = json_decode($result->getBody()->getContents());
-//
-//        return Token::create([
-//            'shop_id'           => $this->shop->id,
-//            'tokenable_id'      => $this->platform->id,
-//            'tokenable_type'    => Platform::class,
-//            'key'               => $data->data->token,
-//            'valid_until'       => Carbon::parse($data->data->expire_date)
-//        ]);
-//    }
-//
-//    private function handleAuthorizationHeader()
-//    {
-//        return function (callable $handler)
-//        {
-//            return function (RequestInterface $request, array $options) use ($handler)
-//            {
-//                if($this->token)
-//                {
-//                    $request = $request->withHeader('X-AUTH-TOKEN', $this->token->key);
-//                }
-//
-//                return $handler($request, $options);
-//            };
-//        };
-//    }
 
     public static function authenticate(string $username, string $password, string $token = null): Tyre24Client
     {

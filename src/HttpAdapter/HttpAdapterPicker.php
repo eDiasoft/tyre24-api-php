@@ -31,7 +31,7 @@ class HttpAdapterPicker
 
         if ($httpClient instanceof \GuzzleHttp\ClientInterface)
         {
-            return new GuzzleHttpAdapter($httpClient);
+            return new GuzzleHttpAdapter($httpClient, $service);
         }
 
         throw new UnrecognizedHttpClientException('The provided http client or adapter was not recognized.');

@@ -9,7 +9,7 @@ class Authenticate extends Service
 {
     private ?string $username;
     private ?string $password;
-    private ?string $token;
+    private ?string $token = null;
     public function __construct(string $username, string $password, string $token = null)
     {
         parent::__construct($this);
@@ -23,7 +23,9 @@ class Authenticate extends Service
     {
         if($this->username && $this->password)
         {
-            return $this->httpClient->send('GET', 'common/login');
+            $data = $this->httpClient->sendGetToken($this->username, $this->password);
+
+            return $data->data->token;
         }
 
         throw new AuthenticationException('Either username or password are empty.');

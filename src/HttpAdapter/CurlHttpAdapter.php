@@ -22,7 +22,7 @@ final class CurlHttpAdapter implements HttpAdapterInterface
         $this->service = $service;
     }
 
-    public function send(string $httpMethod, string $url, array $headers = [], string $httpBody = '')
+    public function send(string $httpMethod, string $url, array $headers = [], array $queries = [], string $httpBody = '')
     {
         for ($i = 0; $i <= self::MAX_RETRIES; $i++)
         {
@@ -158,5 +158,10 @@ final class CurlHttpAdapter implements HttpAdapterInterface
         }
 
         return $result;
+    }
+
+    public function sendGetToken(string $username, string $password)
+    {
+        // TODO: Implement sendGetToken() method.
     }
 }
