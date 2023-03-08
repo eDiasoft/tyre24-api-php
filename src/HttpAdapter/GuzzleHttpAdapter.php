@@ -87,6 +87,11 @@ class GuzzleHttpAdapter implements HttpAdapterInterface
 
         $object = @json_decode($body);
 
+        if(isset($object->data->error))
+        {
+            throw new ApiException($object->data->error);
+        }
+
         if (json_last_error() !== JSON_ERROR_NONE)
         {
             throw new ApiException("Unable to decode Tyre24 response: '{$body}'.");
