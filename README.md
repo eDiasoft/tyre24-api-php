@@ -4,6 +4,10 @@
 <p align="center"></p>
 <h1 align="center">Tyre24 API client for PHP</h1>
 
+<a href="https://www.buymeacoffee.com/shuch3n" target="_blank">
+<img width="100" alt="yellow-button" src="https://user-images.githubusercontent.com/7081446/223840887-a22159f2-4830-44d5-ad68-98eaea370e66.png">
+</a>
+
 <p>
 The Tyre24 API client enables developers to rapidly interact with the Tyre24 API and access data about products, orders, shipping, and more. This client was explicitly designed for Tyre24, a well-known tire and wheel marketplace.<br />
 <br />
@@ -11,7 +15,7 @@ This project is an open-source. Developers can contribute and suggest new featur
 </p>
 
 ## Requirements ##
-To use the Mollie API client, the following things are required:
+To use the Tyre24 API client, the following things are required:
 
 + Get yourself a Tyre24 [supplier account](https://supplier.alzura.com).
 + Now you're ready to use the Tyre24 API client.
