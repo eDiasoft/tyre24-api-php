@@ -42,5 +42,17 @@ By far the easiest way to install the Tyre24 API client is to require it with [C
 Initializing the Tyre24 API client, and retrieve your authenticate token.
 
 ```php
+<?php
 
+use eDiasoft\Tyre24\Tyre24Client;
+
+$client = Tyre24Client::authenticate(env('TYRE24_USER'), env('TYRE24_PASSWORD'));
+
+//Retrieve latest orders
+$latestOrders = $client->orders->latestOrders('de');
 ``` 
+## License
+Tyre24 API PHP Client is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Support ##
+Contact: edisoft.com — info@edisoft.com — +31 10 84 342 77
