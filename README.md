@@ -55,4 +55,4 @@ $latestOrders = $client->orders->latestOrders('de');
 Tyre24 API PHP Client is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 ## Support ##
-Contact: edisoft.com — info@edisoft.com — +31 10 84 342 77
+Contact: [ediasoft.com](ediasoft.com) — info@ediasoft.com — +31 10 84 342 77
