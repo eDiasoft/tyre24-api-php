@@ -4,6 +4,9 @@
 <p align="center"></p>
 <h1 align="center">Tyre24 API client for PHP</h1>
 
+![tyre24cover_readme](https://user-images.githubusercontent.com/7081446/223845481-77f883b0-6764-4224-b64f-2a0204c66e57.png)
+
+
 <a href="https://www.buymeacoffee.com/shuch3n" target="_blank">
 <img width="100" alt="yellow-button" src="https://user-images.githubusercontent.com/7081446/223840887-a22159f2-4830-44d5-ad68-98eaea370e66.png">
 </a>
@@ -30,7 +33,7 @@ By far the easiest way to install the Tyre24 API client is to require it with [C
 
     {
         "require": {
-            "ediasoft/tyre24-api-php": "^2.0"
+            "ediasoft/tyre24-api-php": "^1.0"
         }
     }
 
