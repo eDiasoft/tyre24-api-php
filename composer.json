@@ -26,7 +26,7 @@
     }],
     "autoload": {
         "psr-4": {
-            "eDiasoft\\Tyre24": "src"
+            "eDiasoft\\Tyre24\\": "src"
         }
     },
     "autoload-dev": {
