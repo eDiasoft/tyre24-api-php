@@ -25,7 +25,7 @@ class Tyre24Client
     public Orders $orders;
     public Shippings $shippings;
 
-    public function __construct(string $username, string $password, string $token = null)
+    public function __construct(string $username = null, string $password = null, string $token = null)
     {
         $this->authenticate = new Authenticate($username, $password, $token);
 
@@ -41,8 +41,13 @@ class Tyre24Client
         $this->shippings = new Shippings($this->authenticate);
     }
 
-    public static function authenticate(string $username, string $password, string $token = null): Tyre24Client
+    public static function authenticate(string $username = null, string $password = null, string $token = null): Tyre24Client
     {
         return new self($username, $password, $token);
+    }
+
+    public function getAuthToken(): string
+    {
+        return $this->authenticate->token();
     }
 }

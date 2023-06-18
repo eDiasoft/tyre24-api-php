@@ -10,7 +10,8 @@ class Authenticate extends Service
     private ?string $username;
     private ?string $password;
     private ?string $token = null;
-    public function __construct(string $username, string $password, string $token = null)
+
+    public function __construct(string $username = null, string $password = null, string $token = null)
     {
         parent::__construct($this);
 
@@ -21,7 +22,7 @@ class Authenticate extends Service
 
     private function retrievingToken(): string
     {
-        if($this->username && $this->password)
+        if(($this->username && $this->password) && !$this->token)
         {
             $data = $this->httpClient->sendGetToken($this->username, $this->password);
 

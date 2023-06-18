@@ -89,7 +89,10 @@ class GuzzleHttpAdapter implements HttpAdapterInterface
 
         if(isset($object->data->error))
         {
-            throw new ApiException($object->data->error);
+            throw new ApiException(json_encode([
+                'headers'   => $response->getHeaders(),
+                'error' => $object->data->error
+            ]));
         }
 
         if (json_last_error() !== JSON_ERROR_NONE)
