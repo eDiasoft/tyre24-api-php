@@ -2,7 +2,7 @@
     "name": "ediasoft/tyre24-api-php",
     "description": "Tyre24 API client library for PHP.",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "type": "library",
     "require": {
         "php": ">=7.4|^8.0",
