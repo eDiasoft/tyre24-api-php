@@ -10,7 +10,7 @@
         "ext-json": "*",
         "ext-pcre": "*",
         "ext-fileinfo": "*",
-        "monolog/monolog": "^2.2"
+        "monolog/monolog": "^2.2|^3.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "3.*",
