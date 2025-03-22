@@ -8,9 +8,10 @@ use eDiasoft\Tyre24\Service\Authenticate;
 
 class Service
 {
-    private $apiVersion = '1.1';
+    private $apiVersion = '1.2';
     protected HttpAdapterInterface $httpClient;
     protected Authenticate $authenticate;
+
     public function __construct(Authenticate $authenticate)
     {
         $this->httpClient = (new HttpAdapterPicker())->pickHttpAdapter($this);

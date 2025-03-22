@@ -23,6 +23,27 @@ class Orders extends Service
         ]);
     }
 
+    public function setTracking(string $order, string $country, int $shopCompanyId, array $parcelNumbers)
+    {
+        return $this->httpClient->send(Tyre24Client::HTTP_PATCH, 'seller/order/' . $order . '/tracking', [
+            'Content-Type'      => 'application/json',
+            'country'           => $country
+        ], httpBody: json_encode([
+            'shipping_company_id' => $shopCompanyId,
+            'parcel_numbers'   => $parcelNumbers
+        ]));
+    }
+
+    public function uploadInvoice(string $order, string $country, string $invoice)
+    {
+        return $this->httpClient->send(Tyre24Client::HTTP_PATCH, 'seller/order/' . $order . '/invoicepdf', [
+            'Content-Type'      => 'application/json',
+            'country'           => $country
+        ], httpBody: json_encode([
+            'pdf' => $invoice,
+        ]));
+    }
+
     public function latestOrders(string $country = 'de', int $counter = 0, bool $demo = false, bool $no_tagging = true, string $order_role = null, int $tracking_number = 0)
     {
         return $this->httpClient->send(Tyre24Client::HTTP_GET, 'common/latestorders', [
