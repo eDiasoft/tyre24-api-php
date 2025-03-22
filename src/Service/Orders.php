@@ -23,6 +23,16 @@ class Orders extends Service
         ]);
     }
 
+    public function setOrderStatus(string $order, string $country, int $statusId)
+    {
+        return $this->httpClient->send(Tyre24Client::HTTP_PATCH, 'seller/order/' . $order . '/status', [
+            'Content-Type'      => 'application/json',
+            'country'           => $country
+        ], httpBody: json_encode([
+            'status_id' => $statusId
+        ]));
+    }
+
     public function setTracking(string $order, string $country, int $shopCompanyId, array $parcelNumbers)
     {
         return $this->httpClient->send(Tyre24Client::HTTP_PATCH, 'seller/order/' . $order . '/tracking', [
